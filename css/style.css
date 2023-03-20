@@ -592,6 +592,7 @@ main {
   margin-right: 16px;
 }
 .marketing .link__icon {
+  display: block;
   width: 24px;
   height: 24px;
   margin-right: 16px;
