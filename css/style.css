@@ -73,12 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-.partnership .body__link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .ibg {
   background-position: center;
   background-size: cover;
@@ -424,16 +418,12 @@ main {
   margin-bottom: 30px;
 }
 .partnership .body__link {
+  padding: 14px 40px;
+  width: auto;
+  display: inline-block;
   margin: auto;
   font-size: 16px;
-  color: white;
-  background: #E2000F;
-  width: 263px;
-  height: 49px;
   transition: 0.3s;
-}
-.partnership .body__link:hover {
-  box-shadow: 0px 10px 16px rgba(226, 0, 15, 0.2);
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .partnership {
@@ -449,8 +439,7 @@ main {
   }
   .partnership .body__link {
     font-size: 14px;
-    width: 243px;
-    height: 44px;
+    padding: 12px 38px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -467,8 +456,7 @@ main {
   }
   .partnership .body__link {
     font-size: 12px;
-    width: 233px;
-    height: 39px;
+    padding: 10px 36px;
   }
 }
 @media (max-width: 767px) {
@@ -485,8 +473,6 @@ main {
   }
   .partnership .body__link {
     font-size: 10px;
-    width: 183px;
-    height: 29px;
   }
 }
 @media (max-width: 480px) {
@@ -506,7 +492,7 @@ main {
   .partnership .body__link {
     width: 100%;
     font-size: 14px;
-    height: 47px;
+    padding: 14px 0;
   }
   .partnership .body__title {
     text-align: left;
