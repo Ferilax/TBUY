@@ -1,14 +1,6 @@
 //! класс для отображения красной точки - alert
 //! на сам user и на li (.item__list)
 
-.main {
-   height: 80px;
-   background: #8383835b;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   box-shadow: 0px 3px 6px #00000029;  
-}
 .user {
    position: relative;
    width: 22px;
