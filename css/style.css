@@ -73,13 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-.compare .product__buttons .buttons__like {
+.mailing .down__counter, .tbuy-contact .enter-message__send, .tbuy-contact__form .form__enter-message, .compare .product__buttons .buttons__like {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main {
+.main {
   max-width: 1920px;
   margin: auto;
   color: #1D1D1D;
@@ -311,6 +311,17 @@ a {
   .pxs {
     font-size: 14px;
   }
+}
+
+.flex-container {
+  display: flex;
+  padding-top: 30px;
+}
+.flex-container aside {
+  flex: 0 0 377px;
+  border: 1px solid #000;
+  margin-right: 31px;
+  align-self: flex-start;
 }
 
 main {
@@ -842,6 +853,7 @@ main {
 @media (max-width: 768px) {
   .marketing {
     margin-bottom: 33px;
+    padding-top: 16px;
     font-size: 16px;
   }
   .marketing .container {
@@ -1730,4 +1742,504 @@ main {
 }
 .index div {
   margin-bottom: 20px;
+}
+
+.tbuy-contact {
+  margin-bottom: 100px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1607843137);
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 860px;
+  display: flex;
+  flex-direction: column;
+}
+.tbuy-contact__header {
+  flex: 0 0 90px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E1E1E1;
+  border-radius: 20px 20px 0px 0px;
+}
+.tbuy-contact__messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+}
+.tbuy-contact__form {
+  border-top: 1px solid #E1E1E1;
+  flex: 0 0 78px;
+}
+.tbuy-contact__form .form__enter-message {
+  height: 100%;
+  padding: 0 30px;
+}
+.tbuy-contact .header__avatar {
+  flex: 0 0 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.tbuy-contact .header__avatar img, .tbuy-contact .header__avatar svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.tbuy-contact .header__name {
+  flex: 1 1 auto;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.tbuy-contact .header__more {
+  flex: 0 0 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1019607843);
+}
+.tbuy-contact .header__more .more__point {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1D1D1D;
+  border-radius: 50%;
+}
+.tbuy-contact .header__more .more__point::before, .tbuy-contact .header__more .more__point::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0;
+  background: #1D1D1D;
+  border-radius: inherit;
+}
+.tbuy-contact .header__more .more__point::before {
+  top: -8px;
+}
+.tbuy-contact .header__more .more__point::after {
+  top: 8px;
+}
+.tbuy-contact .enter-message__write {
+  background: #F4F6F8;
+  flex: 1 1 auto;
+  height: 50px;
+  padding: 0 20px;
+  margin-right: 20px;
+}
+.tbuy-contact .enter-message__write::-moz-placeholder {
+  color: #A1A1A1;
+}
+.tbuy-contact .enter-message__write::placeholder {
+  color: #A1A1A1;
+}
+.tbuy-contact .enter-message__send {
+  height: 50px;
+  width: 50px;
+  background: #2463BF;
+  border-radius: 50%;
+  box-shadow: 0px 10px 16px rgba(1, 119, 193, 0.2);
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tbuy-contact__header {
+    padding: 0 15px;
+    flex: 0 0 80px;
+  }
+  .tbuy-contact__messages {
+    padding-top: 20px;
+  }
+  .tbuy-contact__form .form__enter-message {
+    padding: 0 25px;
+  }
+  .tbuy-contact .header__name {
+    font-size: 27px;
+  }
+  .tbuy-contact .messages__message {
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+  .tbuy-contact .messages__date {
+    margin-bottom: 20px;
+  }
+  .tbuy-contact .message__body {
+    max-width: 320px;
+    padding: 12px 14px;
+  }
+  .tbuy-contact .enter-message__write {
+    height: 45px;
+  }
+  .tbuy-contact .enter-message__send {
+    height: 45px;
+    width: 45px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .tbuy-contact__header {
+    padding: 0 15px;
+    flex: 0 0 70px;
+  }
+  .tbuy-contact__messages {
+    padding-top: 15px;
+  }
+  .tbuy-contact__form .form__enter-message {
+    padding: 0 20px;
+  }
+  .tbuy-contact .header__name {
+    font-size: 23px;
+  }
+  .tbuy-contact .header__more {
+    flex: 0 0 45px;
+    height: 45px;
+  }
+  .tbuy-contact .messages__message {
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+  .tbuy-contact .messages__date {
+    margin-bottom: 15px;
+  }
+  .tbuy-contact .message__body {
+    max-width: 220px;
+  }
+  .tbuy-contact .message__avatar {
+    margin-right: 10px;
+  }
+  .tbuy-contact .enter-message__write {
+    height: 45px;
+  }
+  .tbuy-contact .enter-message__send {
+    height: 45px;
+    width: 45px;
+  }
+}
+.mailing {
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1019607843);
+  flex: 1 1 auto;
+  padding: 30px;
+}
+.mailing img, .mailing svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mailing__title {
+  margin-bottom: 30px;
+}
+.mailing__flex {
+  display: flex;
+  height: 800px;
+}
+.mailing .down__counter {
+  background: #2463BF;
+  flex: 0 0 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: #FEFEFE;
+  margin-left: 5px;
+}
+.mailing .flex__messages {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.mailing .messages__header {
+  background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+  border-radius: 14px 14px 0 0;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.mailing .messages__body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.mailing .messages__body .body__message {
+  padding: 16px 16px 20px;
+  background: #F8F8F8;
+}
+.mailing .header__avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  margin-right: 16px;
+}
+.mailing .header__username {
+  font-weight: bold;
+}
+.mailing .message__text {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.mailing .message__img {
+  margin-bottom: 16px;
+}
+.mailing .message__data {
+  opacity: 0.5;
+  text-align: right;
+}
+
+.contacts-sidebar {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.contacts-sidebar .contacts__contact {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 82px;
+  padding: 0 12px;
+  border: 1px solid #E1E1E1;
+  margin-bottom: 16px;
+}
+.contacts-sidebar .contacts__contact:last-child {
+  margin-bottom: 0;
+}
+.contacts-sidebar .contacts__contact.active {
+  border: none;
+  box-shadow: 0px 6px 10px rgba(29, 29, 29, 0.1019607843);
+  border-left: 3px solid #0683D2;
+}
+.contacts-sidebar .contact__avatar {
+  flex: 0 0 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 16px;
+  overflow: hidden;
+}
+.contacts-sidebar .contact__right {
+  width: 100%;
+}
+.contacts-sidebar .right__up {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.contacts-sidebar .right__down {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts-sidebar .up__username {
+  font-weight: bold;
+}
+.contacts-sidebar .up__date {
+  color: #A1A1A1;
+}
+.contacts-sidebar .down__spoiler {
+  color: #9D9D9D;
+  width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.messages-body .message-1, .messages-body .message-2 {
+  display: flex;
+  margin-bottom: 25px;
+  padding: 0 20px;
+}
+.messages-body .message-1 .message__avatar, .messages-body .message-2 .message__avatar {
+  flex: 0 0 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.messages-body .message-1 .message__avatar img, .messages-body .message-1 .message__avatar svg, .messages-body .message-2 .message__avatar img, .messages-body .message-2 .message__avatar svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.messages-body .message-1 .message__body, .messages-body .message-2 .message__body {
+  max-width: 520px;
+  padding: 12px 14px;
+}
+.messages-body .message-1 .message__body .body__text, .messages-body .message-2 .message__body .body__text {
+  line-height: 1.5;
+}
+.messages-body .message-1 .message__body .body__date, .messages-body .message-2 .message__body .body__date {
+  margin-top: 6px;
+  opacity: 0.5;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+.messages-body .message-1 .message__body .body__date .date__checker, .messages-body .message-2 .message__body .body__date .date__checker {
+  margin-left: 10px;
+}
+.messages-body .message-1 .message__more, .messages-body .message-2 .message__more {
+  width: 25px;
+  height: 25px;
+  align-self: center;
+  cursor: pointer;
+  position: relative;
+}
+.messages-body .message-1 .message__more .more__point, .messages-body .message-2 .message__more .more__point {
+  width: 4px;
+  height: 4px;
+  position: relative;
+  background: #A1A1A1;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.messages-body .message-1 .message__more .more__point::before, .messages-body .message-1 .message__more .more__point::after, .messages-body .message-2 .message__more .more__point::before, .messages-body .message-2 .message__more .more__point::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: inherit;
+  left: 0;
+  top: 0;
+}
+.messages-body .message-1 .message__more .more__point::before, .messages-body .message-2 .message__more .more__point::before {
+  left: -8px;
+}
+.messages-body .message-1 .message__more .more__point::after, .messages-body .message-2 .message__more .more__point::after {
+  left: 8px;
+}
+.messages-body .message-1 .message__more .more__list, .messages-body .message-2 .message__more .more__list {
+  opacity: 0;
+  visibility: hidden;
+  cursor: auto;
+  padding: 6px 0px;
+  position: absolute;
+  z-index: 10;
+  top: 25px;
+  left: -10px;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1019607843);
+  border: 1px solid #F8F8F8;
+  border-radius: 8px;
+  transition: 0.2s;
+  width: -moz-max-content;
+  width: max-content;
+}
+.messages-body .message-1 .message__more .more__list::after, .messages-body .message-2 .message__more .more__list::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-clip-path: polygon(50% 75%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 75%, 0% 100%, 100% 100%);
+  background: #FFFFFF;
+  top: -20px;
+  left: 12px;
+}
+.messages-body .message-1 .message__more .list__item, .messages-body .message-2 .message__more .list__item {
+  cursor: pointer;
+  padding: 6px 12px;
+}
+.messages-body .message-1 .message__more:hover .more__list, .messages-body .message-2 .message__more:hover .more__list {
+  opacity: 1;
+  visibility: visible;
+}
+.messages-body .message-1 {
+  align-self: flex-end;
+}
+.messages-body .message-1 .message__body {
+  background: #E8EFF9;
+  border-radius: 10px 0px 10px 10px;
+  margin-left: 15px;
+}
+.messages-body .message-2 .message__body {
+  background: #F5F5F6;
+  border-radius: 0px 10px 10px 10px;
+  margin-right: 15px;
+}
+.messages-body .message__date {
+  color: #A1A1A1;
+  position: relative;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.messages-body .message__date span {
+  display: inline-block;
+  padding: 0 16px;
+  background: white;
+}
+.messages-body .message__date::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #E1E1E1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+}
+
+.messanger {
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1019607843);
+  flex: 1 1 auto;
+  padding: 30px;
+  height: 910px;
+  display: grid;
+  grid-template-columns: 346px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "title title" "contacts messages";
+  border: 3px solid #2f0988;
+  row-gap: 30px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+}
+.messanger img, .messanger svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.messanger__title {
+  grid-area: title;
+  border: 1px solid #2f0988;
+}
+.messanger__flex {
+  border: 3px solid #2f0988;
+}
+.messanger .flex__contacts {
+  align-self: stretch;
+  grid-area: contacts;
+  border: 1px solid #000;
+}
+.messanger .flex__messages {
+  overflow: hidden;
+  grid-area: messages;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+.messanger .messages__header {
+  flex: 0 0 90px;
+  border: 1px solid #000;
+}
+.messanger .messages__body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1 1 auto;
+}
+.messanger .messages__form {
+  flex: 0 0 78px;
+  border: 1px solid #000;
+}
+.messanger .header__avatar {
+  width: 50px;
+  height: 50px;
 }

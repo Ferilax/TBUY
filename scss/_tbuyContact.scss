@@ -1,6 +1,8 @@
+
+
+// стили для index.html
 .index {
 	padding: 50px;
-
 	a {
 		color: blue;
 		font-size: 25px;
@@ -8,5 +10,231 @@
 	}
 	div {
 		margin-bottom: 20px;
+	}
+}
+
+.tbuy-contact {
+	margin-bottom: 100px;  //? footer
+	box-shadow: 0px 6px 18px #00000029;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	height: 860px;
+	display: flex;
+	flex-direction: column;
+	//height: 100vh;
+	//max-height: 860px;
+
+	&__header {
+		flex: 0 0 90px;
+		padding: 0 20px;
+		display: flex;
+		align-items: center;
+		background: #F9FAFB;
+		border-bottom: 1px solid #E1E1E1;
+		border-radius: 20px 20px 0px 0px;
+	}
+
+	&__messages {
+		flex: 1 1 auto;
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		padding-top: 25px;
+	}
+
+	&__form {
+		border-top: 1px solid #E1E1E1;
+		flex: 0 0 78px;
+		.form__enter-message {
+			height: 100%;
+			@extend %displayFlex;
+			padding: 0 30px;
+		}
+	}
+		
+	.header {
+		&__avatar {
+			flex: 0 0 50px;
+			height: 50px;
+			border-radius: 50%;
+			overflow: hidden;
+			@include img(cover);
+			margin-right: 20px;
+		}
+
+		&__name {
+			flex: 1 1 auto;
+			font-size: 30px;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+
+		&__more {
+			flex: 0 0 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: white;
+			cursor: pointer;
+			box-shadow: 0px 3px 6px #0000001A;
+
+			.more__point {
+				position: relative;
+				width: 4px;
+				height: 4px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #1D1D1D;
+				border-radius: 50%;
+				
+
+				&::before, &::after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0px;
+					left: 0;
+					background: #1D1D1D;
+					border-radius: inherit;
+				}
+
+				&::before {top: -8px;}
+
+				&::after {top: 8px;}
+			}
+		}
+	}
+
+	
+	.enter-message {
+		&__write {
+			background: #F4F6F8;
+			flex: 1 1 auto;
+			height: 50px;
+			padding: 0 20px;
+			margin-right: 20px;
+
+			&::placeholder {
+				color: #A1A1A1;
+			}
+		}
+
+		&__send {
+			@extend %displayFlex;
+			height: 50px;
+			width: 50px;
+			background: #2463BF;
+			border-radius: 50%;
+			box-shadow: 0px 10px 16px #0177C133;
+		}
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		&__header {
+			padding: 0 15px; // 0 20px
+			flex: 0 0 80px; // 90px
+		}
+
+		&__messages {
+			padding-top: 20px; // 25px
+		}
+
+		&__form {
+			.form__enter-message {
+				padding: 0 25px; // 30px
+			}
+		}
+		.header {
+			&__name {
+				font-size: 27px; // 30px
+			}
+		}
+		.messages {
+			&__message {
+				margin-bottom: 20px; //25px
+				padding: 0 15px; //20 px
+			}
+			&__date {
+				margin-bottom: 20px; //25 px
+			}
+		}
+		.message {
+			&__body {
+				max-width: 320px; // 520 px
+				padding: 12px 14px;
+			}
+		}
+		.enter-message {
+			&__write {
+				height: 45px; // 50px
+			}
+			&__send {
+				height: 45px; // 50px
+				width: 45px; // 50px
+			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		&__header {
+			padding: 0 15px; // 0 20px
+			flex: 0 0 70px; // 90px
+		}
+		&__messages {
+			padding-top: 15px; // 25px
+		}
+		&__form {
+			.form__enter-message {
+				padding: 0 20px; // 30px
+			}
+		}
+		.header {
+			&__name {
+				font-size: 23px; // 30px
+			}
+			&__more {
+				flex: 0 0 45px;
+				height: 45px;
+			}
+		}
+		.messages {
+			&__message {
+				margin-bottom: 15px; //25px
+				padding: 0 15px; //20 px
+			}
+			&__date {
+				margin-bottom: 15px; //25 px
+			}
+		}
+		.message {
+			&__body {
+				max-width: 220px; // 520 px
+			}
+			&__avatar {
+				margin-right: 10px;
+			}
+		}
+		.enter-message {
+			&__write {
+				height: 45px; // 50px
+			}
+		
+			&__send {
+				height: 45px; // 50px
+				width: 45px; // 50px
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+	}
+
+	@media (max-width: 480px) {
+	}
+
+	@media (max-width: 375px) {
 	}
 }

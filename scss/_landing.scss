@@ -10,8 +10,8 @@ main {
    line-height: 1.5;
    font-family: Roboto;
    font-size: 18px;
-   margin-bottom: 80px;
-   padding-top: 30px;
+   margin-bottom: 80px; //? footer
+   padding-top: 30px; //? header
 
    &__item {
       display: flex;
@@ -268,8 +268,8 @@ main {
    @media (max-width: 375px) {
       line-height: 1.5;
       font-size: 16px;
-      padding-top: 16px;
-      margin-bottom: 50px;
+      padding-top: 16px; //? header
+      margin-bottom: 50px; //? footer
 
       &__item {
          flex-direction: column;

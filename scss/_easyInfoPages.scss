@@ -1,6 +1,6 @@
 .easy-info-page {
-	padding-top: 30px;
-	margin-bottom: 100px;
+	padding-top: 30px; //? header
+	margin-bottom: 100px; //? footer
 	&__title {
 		margin-bottom: 30px;
 		text-align: center;
@@ -49,8 +49,8 @@
    }
 
    @media (max-width: 767px) {
-		padding-top: 16px;
-		margin-bottom: 50px;
+		padding-top: 16px; //? header
+		margin-bottom: 50px; //? footer
 		&__title {
 			margin-bottom: 20px;
 			line-height: 1.5;

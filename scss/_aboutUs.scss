@@ -1,6 +1,6 @@
 .about {
-	padding-top: 30px;
-	margin-bottom: 100px;
+	padding-top: 30px; //? header
+	margin-bottom: 100px; //? footer
 	&__title {
 		text-align: center;
 		margin-bottom: 30px;
@@ -67,8 +67,8 @@
    }
 
    @media (max-width: 767px) {
-		margin-bottom: 50px;
-		padding-top: 24px;
+		margin-bottom: 50px; //? footer
+		padding-top: 24px; //? header
 		&__title {
 			margin-bottom: 20px;
 		}

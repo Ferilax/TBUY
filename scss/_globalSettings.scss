@@ -2,14 +2,13 @@ $red: #F21A27;
 
 //* ------------------------------------------------------------------------------------------------ *//
 
-main {
+.main {
    max-width: 1920px;
    margin: auto;
    color: #1D1D1D;
    font-family: Roboto;
 }
 a {
-   
    color: #1D1D1D;
 }
 
@@ -208,4 +207,15 @@ a {
    @media (max-width: 375px) {
       font-size: 14px;
    }
+}
+
+.flex-container {
+   display: flex;
+   padding-top: 30px; //? header
+	aside {
+		flex: 0 0 377px;
+		border: 1px solid #000;
+		margin-right: 31px;
+		align-self: flex-start;
+	}
 }

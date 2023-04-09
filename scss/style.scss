@@ -3,6 +3,7 @@
 
 @import "_nullstyle"; //? Обнуляющий стиль
 @import "_mySettings"; //? Миксины, шаблоны и прочее
+@import "_breakpoints"; //? Миксины, шаблоны и прочее
  
 @import "_globalSettings"; //? Глобальные настройки классов
 @import "_landing";
@@ -13,3 +14,7 @@
 @import "_aboutUs";
 @import "_compare";
 @import "_tbuyContact";
+@import "_mailing";
+@import "_contactsSidebar";
+@import "_message.scss";
+@import "_messanger.scss";

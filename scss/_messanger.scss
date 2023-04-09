@@ -1,0 +1,122 @@
+.messanger {
+	box-shadow: 0px 6px 18px #0000001A;
+	flex: 1 1 auto;
+	padding: 30px;
+	@include img(cover);
+	height: 910px;
+	display: grid;
+	grid-template-columns: 346px 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas: 
+		"title title"
+		"contacts messages";
+	border: 3px solid #2f0988;
+	row-gap: 30px;
+	column-gap: 32px;
+	
+	&__title {
+		grid-area: title;
+		//margin-bottom: 30px;
+		border: 1px solid #2f0988;
+	}
+	
+	&__flex {
+		border: 3px solid #2f0988;
+	}
+
+	.flex {
+	
+		&__contacts {
+			align-self: stretch;
+			grid-area: contacts;
+			border: 1px solid #000;
+		}
+
+		&__messages {
+			overflow: hidden;
+			grid-area: messages;
+			border: 1px solid #000;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.contacts-sidebar {
+	}
+
+	.contacts {
+	
+		&__contact {}
+	}
+
+	.contact {
+
+		&__point {}
+
+		&__avatar {}
+
+		&__right {}
+	}
+	.right {
+
+		&__up {}
+
+		&__down {}
+	}
+	.up {
+	
+		&__username {}
+
+		&__date {}
+	}
+	.down {
+
+		&__spoiler {}
+
+		&__counter {}
+	}
+	.messages {
+	
+		&__header {
+			flex: 0 0 90px;
+			border: 1px solid #000;
+		}
+
+		&__body {
+			overflow-y: auto;
+			overflow-x: hidden;
+			flex: 1 1 auto;
+		}
+
+		&__form {
+			flex: 0 0 78px;
+			border: 1px solid #000;
+		}
+	}
+	.header {
+
+		&__avatar {
+			width: 50px;
+			height: 50px;
+		}
+
+		&__username {}
+
+		&__link {}
+	}
+	.body {
+	
+		&__text {}
+
+		&__date {}
+	}
+	
+	.form {
+		&__enter-message {}
+	}
+	.enter-message {
+	
+		&__write {}
+	
+		&__send {}
+	}
+}
