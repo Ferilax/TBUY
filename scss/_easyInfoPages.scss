@@ -2,73 +2,82 @@
 	padding-top: 30px; //? header
 	margin-bottom: 100px; //? footer
 	&__title {
-		margin-bottom: 30px;
+		margin-bottom: 0.917em;
 		text-align: center;
+		line-height: 1.5;
 	}
 
-	&__text {
-		line-height: 1.5;
-		white-space: pre-line;
-		margin-bottom: 30px;
+	
+	&__body {
+		margin-bottom: 28px;
+	}
+	
+	.body {
+		&__text {
+			line-height: 1.5;
+			margin-bottom: 1.25em;
+			&_pre-line {
+				white-space: pre-line;
+			}
+		}
+
+		&__list {
+			margin-bottom: 1.25em;
+		}
 	}
 
 	&__img {
-		@include img(cover);
 		height: 450px;
+
+		@include img(cover);
+
+		@include lg-d {
+			height: 400px;
+		}
+
+		@include md-d {
+			height: 350px;
+		}
+
+		@include sm-d {
+			height: 300px;
+		}
+
+		@media (max-width: 480px) {
+			height: 250px;
+		}
 	}
 
-	&__link {
+	.text__link {
 		text-decoration: underline;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
 
-	@media (min-width: 992px) and (max-width: 1199px) {
-		&__title {
-			margin-bottom: 25px;
-		}
-		&__text {
-			margin-bottom: 25px;
-		}
-		&__img {
-			height: 400px;
-		}
-   }
+	.list {
+		&__title {}
 
-   @media (min-width: 768px) and (max-width: 991px) {
-		&__title {
-			margin-bottom: 20px;
-		}
-		&__text {
-			margin-bottom: 20px;
-		}
-		&__img {
-			height: 350px;
-		}
-   }
+		&__item {}
+	}
 
-   @media (max-width: 767px) {
+
+
+	@include sm-d {
 		padding-top: 16px; //? header
 		margin-bottom: 50px; //? footer
 		&__title {
-			margin-bottom: 20px;
-			line-height: 1.5;
+			margin-bottom: 16px;
 		}
-		&__text {
-			margin-bottom: 20px;
-		}
-		&__img {
-			height: 300px;
-		}
-   }
 
-   @media (max-width: 480px) {
-		&__img {
-			height: 250px;
+		&__body {
+			margin-bottom: 20px;
 		}
-   }
 
-   @media (max-width: 375px) {
-   }
+		.body {
+			&__text {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }

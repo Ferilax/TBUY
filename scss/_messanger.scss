@@ -1,122 +1,372 @@
 .messanger {
 	box-shadow: 0px 6px 18px #0000001A;
-	flex: 1 1 auto;
 	padding: 30px;
-	@include img(cover);
+	
+	flex: 1 1 auto;
 	height: 910px;
+	height: clamp(600px, 100vh - 110px, 910px); //110px это header + отступ от него
+
 	display: grid;
-	grid-template-columns: 346px 1fr;
+	grid-template-columns: clamp(300px, 40%, 346px) 1fr;
 	grid-template-rows: auto 1fr;
-	grid-template-areas: 
+	grid-template-areas:
 		"title title"
 		"contacts messages";
-	border: 3px solid #2f0988;
 	row-gap: 30px;
 	column-gap: 32px;
-	
+
 	&__title {
 		grid-area: title;
-		//margin-bottom: 30px;
-		border: 1px solid #2f0988;
 	}
 	
 	&__flex {
 		border: 3px solid #2f0988;
 	}
 
-	.flex {
-	
-		&__contacts {
-			align-self: stretch;
-			grid-area: contacts;
-			border: 1px solid #000;
-		}
-
-		&__messages {
-			overflow: hidden;
-			grid-area: messages;
-			border: 1px solid #000;
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	.contacts-sidebar {
+	&__contacts {
+		align-self: stretch;
+		grid-area: contacts;
 	}
 
-	.contacts {
-	
-		&__contact {}
+	&__messages {
+		overflow: hidden;
+		grid-area: messages;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.contact {
-
-		&__point {}
-
-		&__avatar {}
-
-		&__right {}
-	}
-	.right {
-
-		&__up {}
-
-		&__down {}
-	}
-	.up {
-	
-		&__username {}
-
-		&__date {}
-	}
-	.down {
-
-		&__spoiler {}
-
-		&__counter {}
-	}
 	.messages {
-	
 		&__header {
-			flex: 0 0 90px;
-			border: 1px solid #000;
+			background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+			border-radius: 14px 14px 0 0;
+			border-bottom: 1px solid #E1E1E1;
+			display: flex;
+			align-items: center;
+			padding: 20px;
+			@include img(cover);
 		}
 
 		&__body {
+			padding-top: 20px;
 			overflow-y: auto;
 			overflow-x: hidden;
 			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
 		}
 
 		&__form {
 			flex: 0 0 78px;
-			border: 1px solid #000;
 		}
+		
 	}
+
 	.header {
-
-		&__avatar {
-			width: 50px;
-			height: 50px;
+		&__back-link {
+			display: none;
+			padding: 12px;
+			margin-left: -12px;
+			flex: 0 0 auto;
 		}
 
-		&__username {}
+		&__center {
+			line-height: 1.5;
+			flex: 1 1 auto;
+		}
+		
+		&__avatar {
+			flex: 0 0 50px;
+			height: 50px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 20px;
+		}
 
-		&__link {}
-	}
-	.body {
-	
-		&__text {}
+		&__username {
+			font-weight: bold;
+		}
 
-		&__date {}
+		&__link {
+			color: #2463BF;
+			word-break: break-all;
+		}
 	}
 	
 	.form {
 		&__enter-message {}
 	}
-	.enter-message {
+
+	@include lg-d {
+		padding: 20px;
+		min-width: 90%;
+	}
+
+	@include md-d {
+		padding: 15px;
+	}
+
+	@include sm-d {
+		width: 100%;
+		
+		padding: 16px 0 0;
+		row-gap: 0;
+		column-gap: 0;
+		
+		display: flex;
+		flex-direction: column;
+		
+		box-shadow: none;
+		
+		&__title {
+			display: none;
+		}
+
+		&__messages {
+			overflow: unset;
+			height: max(100vh - 60px - 16px - 55px, 500px);
+		}
+
+		.messages__header {
+			border-radius: 0;
+			padding: 0 15px;
+			flex: 0 0 76px;
+		}
+
+		.header {
+			&__back-link {
+				display: inline-block;
+			}
+
+			&__name {
+				font-size: 16px;
+			}
 	
-		&__write {}
-	
-		&__send {}
+			&__avatar {
+				flex: 0 0 40px;
+				height: 40px;
+				margin-right: 13px;
+			}
+		}
+
 	}
 }
+
+.mini-chat {
+	display: none;
+	position: fixed;
+	z-index: $index-4;
+	right: 60px;
+	bottom: 20px;
+
+	&__button {
+		width: 60px;
+		height: 60px;
+		background: #0177C1;
+	}
+
+	&__icons {
+		@include img(cover);
+		position: absolute;
+		bottom: 100%;
+		left: 0px;
+		width: 100%;
+		aspect-ratio: 1/1;
+	}
+	.icons {
+		&__icon {
+			margin-bottom: 16px;
+			position: relative;
+			background: transparent;
+
+			img {
+				border-radius: 50%;
+			}
+		}
+	}
+
+	.icon__alert {
+		position: absolute;
+		top: 0px;
+		right: 0;
+		width: 13px;
+		height: 13px;
+		background: #FF9E3D;
+		border-radius: 50%;
+	}
+
+	&__chat {
+		position: absolute;
+		right: calc(100% + 22px);
+		bottom: 0;
+
+		display: flex;
+		flex-direction: column;
+
+		max-height: 507px;
+		width: 441px;
+
+		border: 1px solid #000;
+		background: white;
+	}
+	.chat {
+		&__header {
+			padding: 18px 30px;
+			display: flex;
+			position: relative;
+			align-items: center;
+			background: #F8F9FF;
+		}
+		
+		&__body {
+			padding: 40px 30px 0;
+		}
+		
+		&__form {
+			padding: 12px 20px;
+			.message-form__send-button {
+				background: linear-gradient(282deg, #3CAFF6 0%, #0177C1 100%);
+				border-radius: 0;
+			}
+		}
+		
+	}
+
+	.header {
+		&__icon {
+			width: 56px;
+			height: 56px;
+			margin-right: 16px;
+
+			@include img(cover);
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	
+		&__mid {
+			flex: 1 1 auto;
+		}
+	
+		&__close {
+			position: absolute;
+			right: -60px;
+			top: 0;
+
+			width: 22px;
+			height: 22px;
+
+			@extend %displayFlex;
+			box-shadow: 0px 3px 6px #00000029;
+			background: white;
+
+			img {
+				width: 12px;
+				height: 12px;
+			}
+		}
+	}
+	
+	.mid {
+		&__username {
+			margin-bottom: 4px;
+		}
+	
+		&__status {
+			color: #A1A1A1;
+			display: flex;
+			align-items: center;
+		}
+	
+		&__more {
+			flex: 0 0 38px;
+			height: 38px;
+
+			.more__point {
+				width: 3px;
+				height: 3px;
+
+				&::before {
+					top: -6px;
+				}
+
+				&::after {
+					top: 6px;
+				}
+			}
+		}
+	}
+	
+	.status {
+		&__pointer {
+			width: 13px;
+			height: 13px;
+
+			margin-right: 10px;
+
+			background: #1ECB40;
+			border-radius: 50%;
+		}
+	
+		&__text {
+			margin-right: 24px;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				right: -12px;
+				top: 0;
+
+				width: 1px;
+				height: 100%;
+
+				background: #707070;
+				opacity: 0.2;
+			}
+		}
+	
+		&__date {}
+	}
+
+	@include lg-d {
+		&__button {
+			width: 50px;
+			height: 50px;
+		}
+		&__chat {
+			width: 390px;
+			height: 450px;
+		}
+		.chat {
+			&__header {
+				padding: 13px 20px;
+			}
+			&__body {
+				padding: 20px 20px 0;
+			}
+		}
+	}
+
+	@include md-d {
+		&__button {
+			width: 40px;
+			height: 40px;
+		}
+		&__chat {
+			width: 340px;
+			height: 400px;
+		}
+		.chat {
+			&__header {
+				padding: 13px 15px;
+			}
+			&__body {
+				padding: 15px 15px 0;
+			}
+		}
+		.header__icon {
+			height: 46px;
+			flex: 0 0 46px;
+		}
+	}
+}
+

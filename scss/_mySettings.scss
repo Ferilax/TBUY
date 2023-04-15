@@ -22,5 +22,12 @@
 	width: calc($size + $size / 2);
 	height: calc($size + $size / 2);
 	padding: calc($size / 4);
-	transform: translate(calc($size / 4 * $bruh));
+	//transform: translate(calc($size / 4 * $bruh));
+}
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 375;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth}));
 }

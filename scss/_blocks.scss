@@ -1,0 +1,626 @@
+//? messages (блок с сообщениями) --------------------------------------------------------------------------------------------------------
+
+.messages-body {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	padding-top: 25px;
+	padding: 25px 20px 0;
+
+	&__message {
+		display: flex;
+		margin-bottom: 25px;
+	}
+
+	.message {
+		&__avatar {
+			flex: 0 0 40px;
+			height: 40px;
+			@include img(cover);
+			border-radius: 50%;
+			margin-right: 16px;
+		}
+
+		&__body {
+			max-width: 520px;
+			padding: 12px 14px;
+		}
+
+		&__more {
+			width: 25px;
+			flex: 0 0 25px;
+			height: 25px;
+			align-self: center;
+			cursor: pointer;
+			position: relative;
+			
+			&:hover {
+				.more__list {
+					visibility: visible;
+					opacity: 1;
+				}
+				&::after {
+					visibility: visible;
+					opacity: 1;
+					
+				}
+			}
+
+			&::after {
+				content: '';
+				visibility: hidden;
+				opacity: 0;
+
+				position: absolute;
+				z-index: $index-2;
+				bottom: -1px;
+				left: 50%;
+				transform: translate(-50%, 0);
+
+				width: 20px;
+				height: 20px;
+
+				clip-path: polygon(50.00% 75.00%, 0.00% 100.00%, 100.00% 100.00%);
+				background: #FFFFFF;
+			}
+
+		}
+	}
+
+	.more__point {
+		width: 4px;
+		height: 4px;
+
+		position: relative;
+		left: 50%;
+		top: 50%;
+
+		background: #A1A1A1;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			width: 100%;
+			height: 100%;
+
+			border-radius: inherit;
+			background: inherit;
+		}
+		&::before {
+			left: -8px;
+		}
+		&::after {
+			left: 8px;
+		}
+	}
+
+	.more__list {
+		visibility: hidden;
+		opacity: 0;
+
+		position: absolute;
+		z-index: $index-2;
+		top: 25px;
+		left: -10px;
+
+		width: max-content;
+		padding: 6px 0px;
+
+		cursor: auto;
+		background: #FFFFFF;
+		box-shadow: 0px 3px 6px #0000001A;
+		border: 1px solid #F8F8F8;
+		border-radius: 8px;
+		transition: 0.2s;
+		
+	}
+
+	.list__item {
+		padding: 6px 12px;
+		cursor: pointer;
+	}
+
+	.body__date {
+		margin-top: 6px;
+		opacity: 0.5;
+		text-align: right;
+	
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		*{
+			line-height: 1;
+		}
+	}
+
+	.date__checker {
+		@include img(cover);
+		margin-left: 10px;
+		width: 20px;
+		height: 11px;
+	}
+
+	
+	&__message-1 {
+		align-self: flex-end;
+		.message__body {
+			margin-left: 15px;
+			background: #E8EFF9;
+			border-radius: 10px 0px 10px 10px;
+		}
+	}
+	
+	&__message-2 {
+		.message__body {
+			margin-right: 15px;
+			background: #F5F5F6;
+			border-radius: 0px 10px 10px 10px;
+		}
+	}
+
+	&__date {
+		position: relative;
+		margin-bottom: 25px;
+		color: #A1A1A1;
+		text-align: center;
+		
+		span {
+			display: inline-block;
+			padding: 0 16px;
+			background: white;
+		}
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: -10;
+
+			width: 100%;
+			height: 1px;
+
+			background: #E1E1E1;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	@include lg-d {
+		padding: 20px 15px 0;
+
+		&__message {
+			margin-bottom: 20px;
+		}
+
+		&__date {
+			margin-bottom: 20px;
+		}
+
+		.message__body {
+			max-width: 320px;
+			padding: 12px 14px;
+		}
+	}
+
+	@include md-d {
+		padding: 15px 15px 0;
+
+		.message__body {
+			max-width: 220px;
+		}
+
+		.message__avatar {
+			margin-right: 10px;
+		}
+	}
+
+	@include sm-d {
+		padding: 15px 0px 0;
+
+		.message__avatar {
+			display: none;
+		}
+
+		.message__body {
+			max-width: 293px;
+			padding: 10px;
+		}
+
+		&__message-1 {
+			.message__body {
+				margin-left: 10px;
+			}
+		}
+
+		&__message-2 {
+			.message__body {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+//? contacts bar (сайдбар с контактами) --------------------------------------------------------------------------------------------------------
+
+.contacts-sidebar {
+	@include img(cover);
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	* {
+		line-height: 1;
+	}
+
+	&__contact {
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		height: 82px;
+
+		padding: 0 12px;
+		margin-bottom: 16px;
+		border: 1px solid #E1E1E1;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__contact.active {
+		border: none;
+		box-shadow: 0px 6px 10px #1D1D1D1A;
+		border-left: 3px solid #0683D2;
+	}
+
+
+	.contact {
+		&__avatar {
+			flex: 0 0 50px;
+			height: 50px;
+
+			margin-right: 16px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+
+		&__right {
+			width: 100%;
+		}
+
+		&__alert {
+			flex: 0 0 8px;
+			height: 8px;
+
+			margin-right: 6px;
+
+			background: #2463BF;
+			border-radius: 50%;
+		}
+	}
+
+	.right {
+		&__up {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 12px;
+		}
+
+		&__down {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	.up {
+		&__username {
+			font-weight: bold;
+		}
+
+		&__date {
+			color: #A1A1A1;
+		}
+	}
+
+	.down {
+		&__spoiler {
+			max-width: 90%;
+			color: #9D9D9D;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			@include sm-d {
+				max-width: 50vw;
+				overflow: unset;
+				text-overflow: unset;
+				white-space: unset;
+				.spoiler__text {
+					color: #9D9D9D;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+		&__counter {
+			background: #2463BF;
+			flex: 0 0 23px;
+			height: 23px;
+			border-radius: 50%;
+			@extend %displayFlex;
+			color: #FEFEFE;
+			margin-left: 5px;
+		}
+		
+	}
+
+	@include sm-d {
+		display: none;
+	}
+
+	
+}
+
+//? message-form (форма с отправкой сообщения) --------------------------------------------------------------------------------------------------------
+
+.message-form {
+	padding: 12px 30px 16px;
+	
+	&__container {
+		@extend %displayFlex;
+		border-radius: 21px;
+	}
+	
+	&__write {
+		flex: 1 1 auto;
+		height: 50px;
+		
+		padding: 0 20px;
+		margin-right: 20px;
+
+		background: #F4F6F8;
+
+		&::placeholder {
+			color: #A1A1A1;
+		}
+	}
+
+	&__send-button {
+		@extend %displayFlex;
+
+		flex: 0 0 50px;
+		height: 50px;
+
+		background: #2463BF;
+		border-radius: 50%;
+		box-shadow: 0px 10px 16px #0177C133;
+	}
+	
+	&__send-icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	@include lg-d {
+		padding: 12px 25px 16px;
+
+		&__write {
+			height: 45px;
+		}
+
+		&__send-button {
+			flex: 0 0 45px;
+			height: 45px;
+		}
+	}
+
+	@include md-d {
+		padding: 12px 20px 16px;
+	}
+
+	@include sm-d {
+		margin: 0 -16px;
+		padding: 12px;
+		box-shadow: 0px -3px 6px #0000001A;
+
+		&__write {
+			font-size: 16px;
+			height: 40px;
+			margin-right: 0;
+			padding: 0 16px;
+			background: transparent;
+		}
+
+		&__send-button {
+			flex: 0 0 40px;
+			height: 40px;
+			box-shadow: 0px 6px 12px #0683D233;
+		}
+
+		&__send-icon {
+			width: 18px;
+			height: 18px;
+		}
+		
+		&__container {
+			background: #F8F8F8;
+		}
+	}
+	
+}
+
+//? more-1 (Тот белый кружок с тремя вертикальными точками) --------------------------------------------------------------------------------------------------------
+
+.more-1 {
+	flex: 0 0 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+	box-shadow: 0px 3px 6px #0000001A;
+
+	.more__point {
+		position: relative;
+		width: 4px;
+		height: 4px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: #1D1D1D;
+		border-radius: 50%;
+
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0px;
+			left: 0;
+			background: #1D1D1D;
+			border-radius: inherit;
+		}
+
+		&::before {
+			top: -8px;
+		}
+
+		&::after {
+			top: 8px;
+		}
+	}
+
+	@include lg-d {
+		flex: 0 0 45px;
+		height: 45px;
+	}
+
+	@include md-d {
+		flex: 0 0 40px;
+		height: 40px;
+	}
+
+	@include sm-d {
+		background: transparent;
+		box-shadow: none;
+		flex: 0 0 24px;
+		height: 24px;
+		transform: translateX(10px);
+		.more__point {
+			&::before {
+				top: -6px;
+			}
+
+			&::after {
+				top: 6px;
+			}
+		}
+		
+	}
+}
+
+//? flex-container (используется только дважды) --------------------------------------------------------------------------------------------------------
+
+.flex-container {
+	display: flex;
+	padding-top: 30px; //? header
+	margin-bottom: 100px; //? footer
+
+	aside {
+		flex: 0 0 377px;
+		border: 1px solid #000;
+		margin-right: 30px;
+	}
+
+	@include lg-d {
+		flex-direction: column;
+		align-items: center;
+		aside {
+			margin: 0 0 30px 0;
+		}
+	}
+
+	@include sm-d {
+		padding-top: 8px; //? header
+		margin-bottom: 50px; //? footer
+		aside {
+			display: none;
+		}
+	}
+}
+
+//? Кнопки --------------------------------------------------------------------------------------------------------
+
+.red_btn {
+	width: 100%;
+	padding: 14px 30px;
+	background: $red;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-weight: 500;
+	box-shadow: 0px 10px 16px rgba(226, 0, 15, 0.2);
+	border: 1px solid $red;
+	transition: all .2s linear;
+
+	&:hover {
+		background: #fff;
+		color: $red;
+	}
+}
+
+.red-button-1 {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #E2000F;
+	box-shadow: 0px 10px 16px #E2000F33;
+	transition: all .2s linear;
+
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.red-button-2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	font-weight: bold;
+	color: #E2000F;
+	background: white;
+	transition: all .2s linear;
+	border: 1px solid #E2000F;
+
+	&:hover {
+		color: white;
+		background: #E2000F;
+	}
+}
+
+//? Кнопка назад --------------------------------------------------------------------------------------------------------
+
+.back-link {
+	display: none;
+	padding-left: 20px;
+	background: url('../img/icons/left-arrow-black12x7.svg') left center no-repeat;
+	align-self: flex-start;
+	margin-bottom: 16px;
+
+	@include sm-d {
+		display: inline-block;
+	}
+}

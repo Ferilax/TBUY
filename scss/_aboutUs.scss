@@ -1,9 +1,10 @@
 .about {
 	padding-top: 30px; //? header
 	margin-bottom: 100px; //? footer
+
 	&__title {
 		text-align: center;
-		margin-bottom: 30px;
+		margin-bottom: 1.25em;
 	}
 
 	&__body {}
@@ -12,6 +13,11 @@
 		display: flex;
 		align-items: center;
 		margin: 0 -16px 80px;
+
+		@include md-d {
+			margin: 0 -10px 80px;
+		}
+
 		&:nth-child(even) {
 			.item__text {order: 2;}
 			.item__img {order: 1;}
@@ -22,55 +28,42 @@
 	}
 
 	.item {
-		&__text {
-			padding: 0 16px;
-			line-height: 1.5;
-			flex: 0 1 50%;
-		}
-	
+		&__text,
 		&__img {
 			padding: 0 16px;
 			flex: 0 1 50%;
+
+			@include md {
+				padding: 0 10px;
+			}
+		}
+	
+		&__img {
 			@include img(cover);
-			//height: 484px;
+
+			@include lg-d {
+				height: 384px;
+			}
+
+			@include md-d {
+				height: 284px;
+			}
 		}
 	}
 
 	.text__p {
 		white-space: pre-line;
 		&_bold {
-			margin-bottom: 15px;
+			margin-bottom: 0.722em;
 			font-weight: bold;
 		}
 	}
 
-	@media (min-width: 992px) and (max-width: 1199px) {
-		.item__img {
-			height: 384px;
-		}
-		
-   }
-
-   @media (min-width: 768px) and (max-width: 991px) {
-		.body__item {
-			margin: 0 -10px 80px;
-		}
-		.item {
-			&__text {
-				padding: 0 10px;
-			}
-			&__img {
-				padding: 0 10px;
-				height: 284px;
-			}
-		}
-   }
-
-   @media (max-width: 767px) {
+	@include sm-d {
 		margin-bottom: 50px; //? footer
 		padding-top: 24px; //? header
 		&__title {
-			margin-bottom: 20px;
+			margin-bottom: 18px;
 		}
 		.body__item {
 			flex-direction: column;
@@ -87,21 +80,16 @@
 			&__text {
 				margin-bottom: 20px;
 				padding: 0;
+
 				.text__p_bold {
-					margin-bottom: 12px;
+					margin-bottom: 10px;
 				}
 			}
+			
 			&__img {
 				padding: 0;
 				height: 284px;
 			}
 		}
-   }
-
-   @media (max-width: 480px) {
-		
-   }
-
-   @media (max-width: 375px) {
-   }
+	}
 }

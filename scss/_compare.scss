@@ -148,9 +148,7 @@
 		&__param-a {}
 	}
 
-	@media (min-width: 992px) and (max-width: 1199px) {
-		padding-top: 30px;
-	
+	@include lg-d {
 		&__items {
 			max-width: 100%;
 		}
@@ -183,7 +181,7 @@
 				.buttons__like {
 					flex: 0 0 40px;
 					height: 40px;
-
+	
 					img {
 						width: 24px;
 						height: 20px;
@@ -191,10 +189,9 @@
 				}
 			}
 		}
-   }
+	}
 
-   @media (min-width: 768px) and (max-width: 991px) {
-	
+	@include md-d {
 		&__title {
 			margin-bottom: 20px;
 		}
@@ -241,7 +238,7 @@
 				.buttons__like {
 					flex: 0 0 35px;
 					height: 35px;
-
+	
 					img {
 						width: 19px;
 						height: 16px;
@@ -249,12 +246,13 @@
 				}
 			}
 		}
-   }
+	}
 
-   @media (max-width: 767px) {
-		line-height: 1.5;
+	@include sm-d {
+		
 		padding-top: 16px; //? header
 		margin-bottom: 50px; //? footer
+		
 		&__title {
 			margin-bottom: 16px;
 		}
@@ -297,7 +295,7 @@
 			&__buttons {
 				margin-bottom: 10px;
 				justify-content: flex-start;
-
+	
 				.buttons__buy {
 					flex: 0 0 47px;
 					height: 47px;
@@ -332,13 +330,13 @@
 				padding: 10px 0;
 			}
 		}
-   }
+	}
 
-   @media (max-width: 480px) {
-   }
+	@media (max-width: 480px) {
+	}
 
-   @media (max-width: 375px) {
-   }
+	@media (max-width: 375px) {
+	}
 
 }
 

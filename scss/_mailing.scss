@@ -1,34 +1,41 @@
 .mailing {
-	box-shadow: 0px 6px 18px #0000001A;
-	flex: 1 1 auto;
-	padding: 30px;
 	@include img(cover);
+	padding: 30px;
+	
+	box-shadow: 0px 6px 18px #0000001A;
+	
+	flex: 1 1 auto;
+	height: 800px;
+	height: clamp(600px, 100vh - 110px, 800px); //110px это header + отступ от него
+
+	display: grid;
+	grid-template-columns: clamp(320px, 40%, 346px) 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"title title"
+		"contacts messages";
+	row-gap: 30px;
+	column-gap: 32px;
 
 	&__title {
-		margin-bottom: 30px;
-	}
+		grid-area: title;
+	} 
 
 	&__flex {
 		display: flex;
-		height: 800px;
 	}
 
-	.down__counter {
-		background: #2463BF;
-		flex: 0 0 23px;
-		height: 23px;
-		border-radius: 50%;
-		@extend %displayFlex;
-		color: #FEFEFE;
-		margin-left: 5px;
+
+	&__messages {
+		overflow: hidden;
+		grid-area: messages;
+		display: flex;
+		flex-direction: column;
 	}
-	
-	.flex {
-		&__messages {
-			flex: 1 1 auto;
-			display: flex;
-			flex-direction: column;
-		}
+
+	&__contacts {
+		align-self: stretch;
+		grid-area: contacts;
 	}
 	
 	
@@ -40,10 +47,10 @@
 			display: flex;
 			align-items: center;
 			padding: 20px;
-			margin-bottom: 20px;
 		}
 	
 		&__body {
+			padding-top: 20px;
 			overflow-x: hidden;
 			overflow-y: auto;
 
@@ -55,6 +62,11 @@
 	}
 
 	.header {
+		&__back-link {
+			display: none;
+			padding: 12px;
+			margin-left: -12px;
+		}
 		&__avatar {
 			border-radius: 50%;
 			overflow: hidden;
@@ -81,6 +93,61 @@
 		&__data {
 			opacity: 0.5;
 			text-align: right;
+		}
+	}
+
+	//??????????????????????????????????????????????????????????????????//////////////////////////////////////////////////
+	@include lg-d {
+		padding: 20px;
+		min-width: 90%;
+	}
+
+	@include md-d {
+		padding: 15px;
+	}
+
+	@include sm-d {
+		width: 100%;
+		
+		padding: 16px 0 0;
+		row-gap: 0;
+		column-gap: 0;
+		
+		display: flex;
+		flex-direction: column;
+		
+		box-shadow: none;
+		
+		&__title {
+			display: none;
+		}
+
+		&__messages {
+			overflow: unset;
+			height: max(100vh - 60px - 16px - 55px, 473px);
+			height: 473px;
+		}
+
+		.messages__header {
+			border-radius: 0;
+			padding: 0 15px;
+			flex: 0 0 76px;
+		}
+
+		.header {
+			&__name {
+				font-size: 16px;
+			}
+	
+			&__avatar {
+				flex: 0 0 40px;
+				height: 40px;
+				margin-right: 13px;
+			}
+
+			&__back-link {
+				display: inline-block;
+			}
 		}
 	}
 }
