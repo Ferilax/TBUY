@@ -2308,5 +2308,149 @@ a {
 }
 
 .ad {
-  background: #000;
+  line-height: 1.5;
+}
+.ad img, .ad svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ad__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 136px;
+  position: relative;
+}
+.ad_top {
+  background: #FFC9C9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.ad_bottom {
+  background: #C9FBFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.ad__img {
+  flex: 0 0 auto;
+  height: 100%;
+}
+.ad__close {
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+@media (max-width: 1279.8px) {
+  .ad__close {
+    right: 40px;
+  }
+}
+@media (max-width: 1023.8px) {
+  .ad__close {
+    right: 30px;
+  }
+}
+@media (max-width: 767.8px) {
+  .ad__close {
+    right: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .ad__close {
+    right: 16px;
+  }
+}
+.ad__body {
+  padding: 0 30px;
+}
+.ad .body__title {
+  font-weight: bold;
+  font-size: calc(10px + 8 * ((100vw - 375px) / 1545));
+  margin-bottom: 0.444em;
+}
+.ad .body__text {
+  margin-bottom: 18px;
+  font-size: calc(10px + 4 * ((100vw - 375px) / 1545));
+}
+.ad .body__link {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: calc(10px + 6 * ((100vw - 375px) / 1545));
+}
+@media (max-width: 767.8px) {
+  .ad {
+    padding: 12px 0;
+  }
+  .ad__container {
+    height: auto;
+  }
+  .ad__img {
+    width: 90px;
+    height: 56px;
+    align-self: flex-end;
+  }
+  .ad__img_1 {
+    display: none;
+  }
+  .ad__body {
+    padding: 0 10px 0 0;
+  }
+  .ad .body__title {
+    margin-bottom: 4px;
+  }
+  .ad .body__text {
+    margin-bottom: 4px;
+  }
+  .ad__close {
+    top: 0;
+  }
+}
+
+.modal-content {
+  max-width: 996px;
+  background: #b567d4;
+  position: relative;
+}
+.modal-content__close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+}
+.modal-content__close img, .modal-content__close svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.modal-content__title {
+  text-align: center;
+  margin-bottom: 1.083em;
+}
+.modal-content__text {
+  white-space: pre-line;
+  margin-bottom: 1.875em;
+}
+.modal-content__subtitle {
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.modal-content__checkbox {
+  margin-bottom: 1.75em;
+  text-align: center;
+}
+.modal-content__button-container {
+  text-align: center;
+}
+.modal-content__button {
+  padding: 0.875em 2.5em;
 }
