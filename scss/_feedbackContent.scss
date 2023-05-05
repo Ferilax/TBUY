@@ -1,0 +1,165 @@
+.feedbackContent {
+	border: 1px solid #000; //todo удалить
+	max-width: 754px;
+	@include img(cover);
+
+	&__title {
+		margin-bottom: 0.75em;
+	}
+
+	&__product {
+		display: flex;
+		align-items: center;
+		margin-bottom: 28px;
+	}
+	.product {
+		&__image {
+			margin-right: 16px;
+			flex: 0 0 75px;
+			height: 65px;
+		}
+	
+		&__name {}
+	}
+
+	&__subtitle {
+		margin-bottom: 0.8em;
+		@include adaptiv-font(20, 16);
+	}
+
+	// ---------------------------------------
+	
+	&__rate {
+		margin-bottom: 18px;
+
+		&:last-of-type {
+			margin-bottom: 28px;
+		}
+	}
+
+	.rate {
+		&__title {
+			display: block;
+			margin-bottom: 0.875em;
+
+			@include sm-d {
+				font-weight: normal;
+			}
+		}
+	
+		&__item {
+			display: flex;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+
+			@include sm-d {
+				justify-content: space-between;
+			}
+		}
+	}
+
+	.item {
+		&__stars {
+			display: flex;
+			
+			flex: 0 0 auto;
+			height: 24px;
+
+			align-items: center;
+
+			margin-right: 16px;
+
+			@include sm-d {
+				order: 2;
+				margin-right: 0;
+				margin-left: 10px;
+			}
+		}
+		
+		&__text {
+			@include sm-d {
+				order: 1;
+			}
+		}
+	}
+	
+	.stars {
+		&__star {
+			flex: 0 0 20px;
+			width: 20px;
+			height: 20px;
+
+			cursor: pointer;
+			
+			&:not(:last-child) {
+				margin-right: 6px;
+			}
+		}
+	}
+	
+	// ---------------------------------------
+
+	&__textarea {
+		margin-bottom: 20px;
+	}
+
+	&__attach {
+		display: flex;
+		margin-bottom: 30px;
+
+		@include sm-d {
+			flex-direction: column;
+		}
+	}
+	.attach {
+		&__button {
+			flex: 0 0 210px;
+			height: 50px;
+
+			margin-right: 16px;
+
+			img {
+				margin-right: 10px;
+				width: 24px;
+				height: 20px;
+			}
+
+			@include sm-d {
+				flex: 0 0 47px;
+				height: 47px;
+				margin: 0 0 10px 0;
+			}
+		}
+	
+		&__info {
+			@include adaptiv-font(14, 12);
+		}
+	}
+
+	&__submit {
+		padding: 14px 40px;
+
+		@include sm-d {
+			width: 100%;
+		}
+	}
+
+	@include sm-d {
+		&__product {
+			margin-bottom: 18px;
+		}
+		&__subtitle {
+			margin-bottom: 12px;
+		}
+		.rate__title {
+			margin-bottom: 14px;
+		}
+		.rate__item {
+			&:not(:last-child) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+}
