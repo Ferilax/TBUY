@@ -3296,6 +3296,10 @@ a {
   .gallery .flexbox__video {
     flex: 0 1 calc(40% - 10px);
   }
+  .gallery .photo__items,
+  .gallery .video__items {
+    height: 164px;
+  }
 }
 @media (max-width: 1023.8px) {
   .gallery__flexbox {

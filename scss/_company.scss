@@ -603,6 +603,11 @@
 		.flexbox__video {
 			flex: 0 1 calc(40% - 10px);
 		}
+
+		.photo__items,
+		.video__items {
+			height: 164px;
+		}
 	}
 
 	@include md-d {
