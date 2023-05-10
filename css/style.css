@@ -2866,7 +2866,6 @@ a {
 .company .header__content {
   flex: 0 1 50%;
   padding-right: 40px;
-  border: 1px solid #000;
 }
 .company .header__swiper {
   align-self: flex-start;
@@ -2882,7 +2881,6 @@ a {
   -moz-column-gap: 20px;
        column-gap: 20px;
   margin-bottom: 20px;
-  border: 1px solid #000;
 }
 .company .content__flexbox .flexbox__avatar {
   aspect-ratio: 1/1;
