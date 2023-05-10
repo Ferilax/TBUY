@@ -2892,6 +2892,13 @@ a {
 .company .content__info {
   margin-bottom: 3.25em;
 }
+.company .content__info .info__text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .company .content__info .info__readMore {
   cursor: pointer;
   color: #2463BF;
@@ -3034,6 +3041,9 @@ a {
   .company .header__content {
     padding-right: 0;
     order: 2;
+  }
+  .company .content__info .info__text {
+    -webkit-line-clamp: 5;
   }
 }
 @media (max-width: 350px) {
