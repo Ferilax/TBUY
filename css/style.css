@@ -2559,107 +2559,107 @@ a {
   }
 }
 
-.ad {
+.adBigBrain {
   line-height: 1.5;
 }
-.ad img, .ad svg {
+.adBigBrain img, .adBigBrain svg {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.ad__container {
+.adBigBrain__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 136px;
   position: relative;
 }
-.ad_top {
+.adBigBrain_top {
   background: #FFC9C9;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
-.ad_bottom {
+.adBigBrain_bottom {
   background: #C9FBFF;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-.ad__img {
+.adBigBrain__img {
   flex: 0 0 auto;
   height: 100%;
 }
-.ad__close {
+.adBigBrain__close {
   position: absolute;
   right: 50px;
   top: 20px;
 }
 @media (max-width: 1279.8px) {
-  .ad__close {
+  .adBigBrain__close {
     right: 40px;
   }
 }
 @media (max-width: 1023.8px) {
-  .ad__close {
+  .adBigBrain__close {
     right: 30px;
   }
 }
 @media (max-width: 767.8px) {
-  .ad__close {
+  .adBigBrain__close {
     right: 20px;
   }
 }
 @media (max-width: 375px) {
-  .ad__close {
+  .adBigBrain__close {
     right: 16px;
   }
 }
-.ad__body {
+.adBigBrain__body {
   padding: 0 30px;
 }
-.ad .body__title {
+.adBigBrain .body__title {
   font-weight: bold;
   font-size: calc(10px + 8 * ((100vw - 375px) / 1545));
   margin-bottom: 0.444em;
 }
-.ad .body__text {
+.adBigBrain .body__text {
   margin-bottom: 18px;
   font-size: calc(10px + 4 * ((100vw - 375px) / 1545));
 }
-.ad .body__link {
+.adBigBrain .body__link {
   font-weight: bold;
   text-decoration: underline;
   font-size: calc(10px + 6 * ((100vw - 375px) / 1545));
 }
 @media (max-width: 767.8px) {
-  .ad {
+  .adBigBrain {
     padding: 12px 0;
   }
-  .ad__container {
+  .adBigBrain__container {
     height: auto;
   }
-  .ad__img {
+  .adBigBrain__img {
     width: 90px;
     height: 56px;
     align-self: flex-end;
   }
-  .ad__img_1 {
+  .adBigBrain__img_1 {
     display: none;
   }
-  .ad__body {
+  .adBigBrain__body {
     padding: 0 10px 0 0;
   }
-  .ad .body__title {
+  .adBigBrain .body__title {
     margin-bottom: 4px;
   }
-  .ad .body__text {
+  .adBigBrain .body__text {
     margin-bottom: 4px;
   }
-  .ad__close {
+  .adBigBrain__close {
     top: 0;
   }
 }
