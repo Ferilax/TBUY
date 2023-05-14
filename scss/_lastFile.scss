@@ -1,0 +1,142 @@
+.favoritePopup {
+	background: $grayF5;
+	position: absolute;
+	width: 100%;
+	z-index: $index-5;
+
+	position: relative; //todo УДАЛИТЬ
+	margin-bottom: 200px; //todo УДАЛИТЬ
+
+	&__container {
+		margin: auto;
+		max-width: 1106px;
+
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.container {
+		&__checkIcon {
+			align-self: flex-start;
+			flex: 0 0 28px;
+			height: 28px;
+			@extend %displayFlex;
+			background: $blue;
+			border-radius: 50%;
+
+			@include sm-d {
+				flex: 0 0 24px;
+				height: 24px;
+			}
+		}
+
+		&__text {
+			flex: 1 1 auto;
+
+			.text__productName {
+				color: $blue;
+			}
+		}
+
+		&__cancel {
+			align-self: flex-start;
+		}
+	}
+
+}
+
+// ------------------------------------------------------------------------------------------------------
+
+
+.basket {
+	max-width: 347px;
+	padding: 22px 16px 30px;
+
+	box-shadow: 0px 10px 20px #0000001A;
+	border-radius: 14px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+
+		padding-bottom: 12px;
+		margin-bottom: 12px;
+		border-bottom: 1px solid $grayE1;
+
+		.header {
+			&__delete {
+				color: #E2000F;
+				background: transparent;
+			}
+		}
+	}
+
+	&__items {
+
+		.items__item {
+			padding-bottom: 20px;
+			border-bottom: 1px solid $grayE1;
+			margin-bottom: 12px;
+
+			display: grid;
+			grid-template-columns: 74px 1fr 16px;
+			column-gap: 16px;
+			place-content: center;
+		}
+	}
+
+	.item {
+		&__img {
+			height: 57px;
+			@include img(cover);
+		}
+
+		&__info {
+			align-self: center;
+		}
+
+		&__cancel {
+			aspect-ratio: 1/1;
+			@include img(contain);
+			background: transparent;
+		}
+
+		&__installation {
+			margin-top: 7px;
+			grid-column: 2/3;
+
+
+			.installation__price {}
+
+			.installation__text {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+		}
+	}
+
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 30px;
+
+		.total__price {}
+	}
+
+	&__button {
+		width: 100%;
+	}
+
+	@include sm-d {
+		max-width: 100%;
+		width: 100%;
+		padding: 26px 16px 20px;
+		border-radius: unset;
+		box-shadow: 0px 8px 16px #0000001A;
+	}
+}

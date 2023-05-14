@@ -21,7 +21,7 @@
 
 		margin-bottom: 20px;
 	}
-	
+
 	.header__title {
 		font-weight: bold;
 	}
@@ -43,8 +43,7 @@
 			box-shadow: 0px 6px 10px #0000001A;
 		}
 
-		&__name {
-		}
+		&__name {}
 
 		&__info {
 			color: #989898;
@@ -59,6 +58,7 @@
 		&__header {
 			margin-bottom: 16px;
 		}
+
 		&__user {
 			margin-bottom: 26px;
 		}
@@ -80,4 +80,24 @@
 			margin-bottom: 30px;
 		}
 	}
+}
+
+//!! ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Part 3 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+.modalLoading {
+	@include img(cover);
+
+
+	&__img {
+		max-width: 418px;
+		aspect-ratio: 418/575;
+		margin: auto;
+
+		@include sm-d {
+			max-width: 281px;
+			height: auto;
+			aspect-ratio: 281/386;
+		}
+	}
+
 }
